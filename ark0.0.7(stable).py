@@ -29,20 +29,18 @@ def arkmenu0():
         #tobecontinued
         print('not ready yet')
         sleep(1)
-        od.system('clear')
+        os.system('clear')
         arkwelcomer0()
     elif user_choice == '2':
         #tobecontinued
         print('not ready yet')
         sleep(1)
-        od.system('clear')
+        os.system('clear')
         arkwelcomer0()
     elif user_choice == '3':
-        #tobecontinued
-        print('not ready yet')
-        sleep(1)
-        od.system('clear')
-        arkwelcomer0()
+        os.system('clear')
+        os.system('python lib/ARKTLinstaller.py')
+        
     elif user_choice == '4':
         Credits()
     elif user_choice == '5':
