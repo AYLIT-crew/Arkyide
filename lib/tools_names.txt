@@ -1,1 +1,50 @@
-
+1. Aircrack-ng
+2. BeEF
+3. Bettercap
+4. Burp Suite
+5. Cobalt Strike
+6. CrackMapExec
+7. DirBuster
+8. Drozer
+9. Empire
+10. Evilgrade
+11. Evilginx2
+12. Faraday
+13. Fern Wifi Cracker
+14. Gophish
+15. hashcat
+16. Hydra
+17. Infection Monkey
+18. John the Ripper
+19. Kali Linux
+20. Kismet
+21. Metta
+22. Metasploit Framework
+23. Mimikatz
+24. Nmap
+25. OWASP Amass
+26. OWASP ZAP
+27. Photon
+28. PowerShell Empire
+29. PowerSploit
+30. Pupy
+31. Red Team Infrastructure Wiki
+32. Responder
+33. Recon-ng
+34. RouterSploit
+35. SQLMap
+36. Scapy
+37. Snort
+38. Social-Engineer Toolkit (SET)
+39. Veil Framework
+40. Wappalyzer
+41. Wireshark
+42. Windows-Exploit-Suggester
+43. Wifite
+44. XSStrike
+45. OWASP ZAP
+46. Responder
+47. Empire
+48. PowerSploit
+49. CrackMapExec
+50. Cobalt Strike
