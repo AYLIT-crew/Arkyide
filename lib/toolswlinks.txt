@@ -1,1 +1,108 @@
 
+
+
+
+
+1. **Aircrack-ng**: [https://github.com/aircrack-ng/aircrack-ng](https://github.com/aircrack-ng/aircrack-ng)
+
+2. **BeEF**: [https://github.com/beefproject/beef](https://github.com/beefproject/beef)
+
+3. **Bettercap**: [https://github.com/bettercap/bettercap](https://github.com/bettercap/bettercap)
+
+4. **Burp Suite**: [https://github.com/portswigger/burp-suite](https://github.com/portswigger/burp-suite)
+
+5. **Cobalt Strike**: [https://github.com/cobaltstrike/cobaltstrike](https://github.com/cobaltstrike/cobaltstrike)
+
+6. **CrackMapExec**: [https://github.com/byt3bl33d3r/CrackMapExec](https://github.com/byt3bl33d3r/CrackMapExec)
+
+7. **DirBuster**: [https://github.com/s0md3v/DirBuster](https://github.com/s0md3v/DirBuster)
+
+8. **Drozer**: [https://github.com/FSecureLABS/drozer](https://github.com/FSecureLABS/drozer)
+
+9. **Empire**: [https://github.com/BC-SECURITY/Empire](https://github.com/BC-SECURITY/Empire)
+
+10. **Evilgrade**: [https://github.com/infobyte/evilgrade](https://github.com/infobyte/evilgrade)
+
+11. **Evilginx2**: [https://github.com/kgretzky/evilginx2](https://github.com/kgretzky/evilginx2)
+
+12. **Faraday**: [https://github.com/infobyte/faraday](https://github.com/infobyte/faraday)
+
+13. **Fern Wifi Cracker**: [https://github.com/savio-code/fern-wifi-cracker](https://github.com/savio-code/fern-wifi-cracker)
+
+14. **Gophish**: [https://github.com/gophish/gophish](https://github.com/gophish/gophish)
+
+15. **hashcat**: [https://github.com/hashcat/hashcat](https://github.com/hashcat/hashcat)
+
+16. **Hydra**: [https://github.com/vanhauser-thc/thc-hydra](https://github.com/vanhauser-thc/thc-hydra)
+
+17. **Infection Monkey**: [https://github.com/guardicore/monkey](https://github.com/guardicore/monkey)
+
+18. **John the Ripper**: [https://github.com/magnumripper/JohnTheRipper](https://github.com/magnumripper/JohnTheRipper)
+
+19. **Kali Linux**: [https://github.com/offensive-security/kali-linux](https://github.com/offensive-security/kali-linux)
+
+20. **Kismet**: [https://github.com/kismetwireless/kismet](https://github.com/kismetwireless/kismet)
+
+21. **Metta**: [https://github.com/uber-common/metta](https://github.com/uber-common/metta)
+
+22. **Metasploit Framework**: [https://github.com/rapid7/metasploit-framework](https://github.com/rapid7/metasploit-framework)
+
+23. **Mimikatz**: [https://github.com/gentilkiwi/mimikatz](https://github.com/gentilkiwi/mimikatz)
+
+24. **Nmap**: [https://github.com/nmap/nmap](https://github.com/nmap/nmap)
+
+25. **OWASP Amass**: [https://github.com/OWASP/Amass](https://github.com/OWASP/Amass)
+
+26. **OWASP ZAP**: [https://github.com/zaproxy/zaproxy](https://github.com/zaproxy/zaproxy)
+
+27. **Photon**: [https://github.com/s0md3v/Photon](https://github.com/s0md3v/Photon)
+
+28. **PowerShell Empire**: [https://github.com/BC-SECURITY/Empire](https://github.com/BC-SECURITY/Empire)
+
+29. **PowerSploit**: [https://github.com/PowerShellMafia/PowerSploit](https://github.com/PowerShellMafia/PowerSploit)
+
+30. **Pupy**: [https://github.com/n1nj4sec/pupy](https://github.com/n1nj4sec/pupy)
+
+31. **Red Team Infrastructure Wiki**: [https://github.com/bluscreenofjeff/Red-Team-Infrastructure-Wiki](https://github.com/bluscreenofjeff/Red-Team-Infrastructure-Wiki)
+
+32. **Responder**: [https://github.com/lgandx/Responder](https://github.com/lgandx/Responder)
+
+33. **Recon-ng**: [https://github.com/lanmaster53/recon-ng](https://github.com/lanmaster53/recon-ng)
+
+34. **RouterSploit**: [https://github.com/threat9/routersploit](https://github.com/threat9/routersploit)
+
+35. **SQLMap**: [https://github.com/sqlmapproject/sqlmap](https://github.com/sqlmapproject/sqlmap)
+
+36. **Scapy**: [https://github.com/secdev/scapy](https://github.com/secdev/scapy)
+
+37. **Snort**: [https://github.com/snort3/snort3](https://github.com/snort3/snort3)
+
+38. **Social-Engineer Toolkit (SET)**: [https://github.com/trustedsec/social-engineer-toolkit](https://github.com/trustedsec/social-engineer-toolkit)
+
+39. **Veil Framework**: [https://github.com/Veil-Framework/Veil](https://github.com/Veil-Framework/Veil)
+
+40. **Wappalyzer**: [https://github.com/AliasIO/Wappalyzer](https://github.com/AliasIO/Wappalyzer)
+
+41. **Wireshark**: [https://github.com/wireshark/wireshark](https://github.com/wireshark/wireshark)
+
+42. **Windows-Exploit-Suggester**: [https://github.com/GDSSecurity/Windows-Exploit-Suggester](https://github.com/GDSSecurity/Windows-Exploit-Suggester)
+
+43. **Wifite**: [https://github.com/derv82/wifite](https://github.com/derv82/wifite)
+
+44. **XSStrike**: [https://github.com/s0md3v/XSStrike](https://github.com/s0md3v/XSStrike)
+
+45. **OWASP ZAP**: [https://github.com/zaproxy/zaproxy](https://github.com/zaproxy/zaproxy)
+
+46. **Responder**: [https://github.com/lgandx/Responder](https://github.com/lgandx/Responder)
+
+47.
+
+
+
+ **Empire**: [https://github.com/BC-SECURITY/Empire](https://github.com/BC-SECURITY/Empire)
+
+48. **PowerSploit**: [https://github.com/PowerShellMafia/PowerSploit](https://github.com/PowerShellMafia/PowerSploit)
+
+49. **CrackMapExec**: [https://github.com/byt3bl33d3r/CrackMapExec](https://github.com/byt3bl33d3r/CrackMapExec)
+
+50. **Cobalt Strike**: [https://github.com/cobaltstrike/cobaltstrike](https://github.com/cobaltstrike/cobaltstrike)
