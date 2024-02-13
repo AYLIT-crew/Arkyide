@@ -29,7 +29,7 @@ def arkmenu0():
         os.system('clear')
         os.system('python lib/Nexus.py')
     elif user_choice == '2':
-        print(cl('Requires nmap module installed to work', ''))
+        print(cl('Requires nmap module installed to work', 'red'))
         os.system('clear')
         os.system('python lib/net_scan.py')
     elif user_choice == '3':
