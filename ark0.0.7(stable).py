@@ -19,7 +19,7 @@ def arkmenu0():
     print(cl("List of available options: \n", 'red'))
     print("""
     1.E-Mail bomber(beta)
-    2.Nmap-scanner(in progress)
+    2.Nmap-scanner(beta)
     3.Tool installer
     4.Credits
     5.Exit
@@ -32,11 +32,8 @@ def arkmenu0():
         os.system('clear')
         arkwelcomer0()
     elif user_choice == '2':
-        #tobecontinued
-        print('not ready yet')
-        sleep(1)
         os.system('clear')
-        arkwelcomer0()
+        os.system('python lib/net_scan.py')
     elif user_choice == '3':
         os.system('clear')
         os.system('python lib/ARKTLinstaller.py')
