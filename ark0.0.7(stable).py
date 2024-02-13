@@ -26,11 +26,8 @@ def arkmenu0():
     """)
     user_choice = input('Please select one of the options: \n')
     if user_choice == '1':
-        #tobecontinued
-        print('not ready yet')
-        sleep(1)
         os.system('clear')
-        arkwelcomer0()
+        os.system('python lib/Nexus.py')
     elif user_choice == '2':
         os.system('clear')
         os.system('python lib/net_scan.py')
