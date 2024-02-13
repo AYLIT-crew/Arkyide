@@ -1,9 +1,17 @@
-import subprocess, sys, requests, re
 from termcolor import colored as cl
 from pyfiglet import figlet_format as ff
+import subprocess, sys, requests, re, time
 
-def add_custom_cmds():
-    pass
+def scan_ports(prts, addr):
+    ports = ",".join(prts)
+    ctr = 'nmap '+f'-p{ports}'+f' {addr}'
+    data = subprocess.check_output(ctr.split(' ')).decode().split('\n')
+    ind = 0
+    for i in range(len(data)):
+        if 'PORT' in data[i]:
+            ind = i
+            break
+    return data[ind:]
 
 def getosversion(d):
     d = d.split('\n')
@@ -81,8 +89,7 @@ check_tool()
 subprocess.call('clear', shell=True)
 
 commands = {'getversion': 'To get the version of software run by the IP', 'getcommands': 'To get a list of commands which can be used for running a Nmap scan', 'trace': 'To trace the transfer of packets', 'getportsopen': 'To get a list of ports open in a host', 'getosversion': 'To predict the OS run by the IP', 
-            'stealthscan': 'Stealth Scan makes it difficult for the host to determine the scan', 'customcmd': 'To run your custom commands, for format check commands',
-            'createcmd': 'To create your custom command'}
+            'stealthscan': 'Stealth Scan makes it difficult for the host to determine the scan', 'portsscan': 'To scan a list of ports of a host'}
 
 while True: 
     print(cl('='*40, 'red'))
@@ -104,9 +111,13 @@ while True:
         data = subprocess.check_output(['nmap', '-h'])
         print(cl(data.decode(), 'blue'))
     elif cmd == 'createcmd':
-        new_cmd = input(cl('Enter your new command:', 'yellow'))
-        cmd_desc = input(cl('Enter the command description:', 'yellow'))
-        commands[new_cmd] = cmd_desc
+        print(cl("Eg:- To save a custom command to scan specific ports, the command input would be 'nmap -p', the command name could be 'portsscan' and the description would be 'To scan particular ports of the host'.", 'cyan'))
+        time.sleep(2)
+        print(cl('-'*20))
+        cmd = input(cl('Enter the command:', 'yellow'))
+        cmd_name = input(cl('Enter the command name:', 'yellow'))
+        cmd_desc = input(cl('Enter the command description:'))
+        add_custom_cmds(cmd, cmd_name, cmd_desc)
     else:
         addr = input(cl('Enter the IP or address of the webiste to run a nmap scan on:', 'yellow'))
         if cmd == 'getversion':
@@ -177,8 +188,18 @@ while True:
             print('-'*10)
             print(cl(data.decode(), 'blue'))
             print('-'*20)
-        elif cmd == 'createcmd':
-            print(cl('Still on work, sorry for the inconvenience.', 'red'))
+        elif cmd == 'portsscan':
+            ports_option = input(cl('Enter ports manually(y/n)? ', 'yellow'))
+            if ports_option == 'y':
+                ports = list(map(str, input(cl('Enter the ports(eg:- 22 35 45):', 'yellow')).split(' ')))
+                print(cl("\n".join(scan_ports(ports, addr)), 'blue'))
+            else:
+                rnge = list(map(str, input(cl('Enter the starting range and ending range(eg:- 22 443)', 'yellow')).split(' ')))
+                vals = []
+                for i in range(int(rnge[0]), int(rnge[-1])+1):
+                    vals.append(str(i))
+                print(cl("\n".join(scan_ports(ports, addr)), 'blue'))
+            print('-'*20)
         else:
             print(cl('Wrong option', 'red'))
             print('-'*20)
