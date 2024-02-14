@@ -89,7 +89,7 @@ check_tool()
 subprocess.call('clear', shell=True)
 
 commands = {'getversion': 'To get the version of software run by the IP', 'getcommands': 'To get a list of commands which can be used for running a Nmap scan', 'trace': 'To trace the transfer of packets', 'getportsopen': 'To get a list of ports open in a host', 'getosversion': 'To predict the OS run by the IP', 
-            'stealthscan': 'Stealth Scan makes it difficult for the host to determine the scan', 'portsscan': 'To scan a list of ports of a host'}
+        'stealthscan': 'Stealth Scan makes it difficult for the host to determine the scan', 'portsscan': 'To scan a list of ports of a host', 'quit': 'To quit the program'}
 
 while True: 
     print(cl('='*40, 'red'))
@@ -102,6 +102,7 @@ while True:
     print('-'*20)
     cmd = input(cl('Enter the command:', 'yellow')).lower().strip()
     if cmd == 'quit':
+        subprocess.call('clear', shell=True)
         sys.exit()
     elif cmd == 'customcmd':
         cmd = input(cl('Enter your command:', 'yellow'))
