@@ -23,12 +23,8 @@ def getosversion(d):
     return d[ind]
 
 def getversion(d):
-    d = d.split('\n')
-    ind = 0
-    for i in range(len(d)):
-        if 'PORT' in d[i]:
-            ind = i
-    return '\n'.join(d[ind:])
+    d = d.decode().split('\n')
+    return d[0]
 
 def get_ports_open(d):
     dsplit = d.split('\n')
@@ -104,33 +100,16 @@ while True:
     if cmd == 'quit':
         subprocess.call('clear', shell=True)
         sys.exit()
-    elif cmd == 'customcmd':
-        cmd = input(cl('Enter your command:', 'yellow'))
-        data = subprocess.check_output(cmd.split(' '))
         print(cl(data.decode(), 'blue'))
     elif cmd == 'getcommands':
         data = subprocess.check_output(['nmap', '-h'])
         print(cl(data.decode(), 'blue'))
-    elif cmd == 'createcmd':
-        print(cl("Eg:- To save a custom command to scan specific ports, the command input would be 'nmap -p', the command name could be 'portsscan' and the description would be 'To scan particular ports of the host'.", 'cyan'))
-        time.sleep(2)
-        print(cl('-'*20))
-        cmd = input(cl('Enter the command:', 'yellow'))
-        cmd_name = input(cl('Enter the command name:', 'yellow'))
-        cmd_desc = input(cl('Enter the command description:'))
-        add_custom_cmds(cmd, cmd_name, cmd_desc)
+    elif cmd == 'getversion':
+        data = subprocess.check_output(['nmap', '--version'])
+        print(cl(getversion(data), 'blue'))
     else:
-        addr = input(cl('Enter the IP or address of the webiste to run a nmap scan on:', 'yellow'))
-        if cmd == 'getversion':
-            ctr = f'nmap -sV {addr}'
-            print(cl(f'Command to run: {ctr}', 'red'))
-            data = subprocess.check_output(ctr.split(' ')).decode()
-            print('-'*10)
-            print(cl('[+] Scan ran successfully', 'green'))
-            print('-'*10)
-            print(cl(getversion(data), 'blue'))
-            print('-'*20)
-        elif cmd == 'trace':
+        addr = input(cl('Enter address:', 'yellow'))
+        if cmd == 'trace':
             ctr = f'nmap --traceroute {addr}'
             print(cl(f'Command to run: {ctr}', 'red'))
             term_data = subprocess.check_output(ctr.split(' ')).decode()
