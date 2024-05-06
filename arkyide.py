@@ -11,20 +11,21 @@ def Credits():
     print(cl(ff("Project Arkyide")))
     print(cl("Project Arkyide, made by: \n", "red"))
     print(cl("Director Komrade - Project creator, Developer \nVenDis - Project Co-owner, Developer, Main Coder \nThomas Waytec - Developer, Main Coder \nSreesa - Developer", 'cyan'))
-    
-    
 
-    
+
+
+
 def arkmenu0():
     print(cl("List of available options: \n", 'red'))
     print("""
-    1.E-Mail bomber(beta)
-    2.Nmap-scanner(beta)
-    3.Tool installer
-    4.Credits
-    5.Exit
+    1.E-Mail bomber
+    2.NetScan
+    3.Tools installer
+    4.theEYE
+    5.Credits
+    6.Exit
     """)
-    user_choice = input('Please select one of the options: \n')
+    user_choice = input(cl('Please select one of the option numbers:', 'yellow'))
     if user_choice == '1':
         os.system('clear')
         os.system('python lib/mail_bomber.py')
@@ -36,9 +37,9 @@ def arkmenu0():
     elif user_choice == '3':
         os.system('clear')
         os.system('python lib/ARKTLinstaller.py')
-        
     elif user_choice == '4':
-        Credits()
+        os.system('clear')
+        os.system('python lib/theEYE/theEYE.py')
     elif user_choice == '5':
         exit()
     else:
@@ -48,13 +49,14 @@ def arkmenu0():
         arkwelcomer0()
 
 os.system('clear')
+
 def arkwelcomer0():
     os.system('clear')
     print(cl('-'*55, 'red'))
     print(cl(ff('A R K Y I D E')+'\n\t-An AYLIT Production\n\t-v1.0 beta', 'cyan'))
-    print(cl("A complex Suite of tools and tool installer", 'black'))
+    print(cl("A complex Suite of tools and tool installer", 'cyan'))
     print(cl('-'*55, 'red'))
     print('\n')
-    arkmenu0()    
+    arkmenu0()
 
 arkwelcomer0()
