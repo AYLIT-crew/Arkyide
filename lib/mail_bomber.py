@@ -98,6 +98,6 @@ while True:
 		for j in range(int(input(cl('No. of victims:', 'yellow')).strip())):
 			victims.append(input(cl(f'Enter the ID of the victim {str(j+1)}:', 'yellow')).strip())
 		send_mail(mail_accounts_for_attack, victims, account_passwords, mails_to_be_sent, messages)
-        os.system('clear')
+		os.system('cls')
 	else:
 		sys.exit()
