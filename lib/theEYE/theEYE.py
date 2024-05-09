@@ -38,15 +38,15 @@ while True:
 
     option_number = input(cl('Enter the option number:', 'yellow'))
     if option_number == '1':
-        subprocess.call('python ip_info.py', shell=True)
+        subprocess.call('python ./lib/theEYE/ip_info.py', shell=True)
     elif option_number == '2':
-        subprocess.call('python phonenumber_info/phonenumber_info.py', shell=True)
+        subprocess.call('python ./lib/theEYE/phonenumber_info/phonenumber_info.py', shell=True)
     elif option_number == '3':
-        subprocess.call('python domain_harvester.py', shell=True)
+        subprocess.call('python ./lib/theEYE/domain_harvester.py', shell=True)
     elif option_number == '4':
-        subprocess.call('python mail_harvester.py', shell=True)
+        subprocess.call('python ./lib/theEYE/mail_harvester.py', shell=True)
     elif option_number == '5':
-        subprocess.call('python whois.py', shell=True)
+        subprocess.call('python ./lib/theEYE/whois.py', shell=True)
     elif option_number == '6':
         break
     else:
