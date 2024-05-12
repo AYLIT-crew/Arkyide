@@ -18,12 +18,13 @@ def arkmenu0():
     print(cl("List of available options: \n", 'red'))
     print("""
     1.E-Mail bomber
-    2.NetScan
+    2.NetScan(run as root)
     3.Tools installer
     4.theEYE
     5.ARP Spoofer
-    6.Credits
-    7.Exit
+    6.Change MAC(run as root)
+    7.Credits
+    8.Exit
     """)
     user_choice = input(cl('Please select one of the option numbers:', 'yellow'))
     if user_choice == '1':
@@ -49,8 +50,12 @@ def arkmenu0():
         os.system('python lib/arp_spoofer.py')
         os.system('python arkyide.py')
     elif user_choice == '6':
-        Credits()
+        os.system('clear')
+        os.system('python lib/change_mac.py')
+        os.system('python arkyide.py')
     elif user_choice == '7':
+        Credits()
+    elif user_choice == '8':
         sys.exit()
     else:
         print(cl('Wrong choice!'))
