@@ -23,8 +23,9 @@ def arkmenu0():
     4.theEYE
     5.ARP Spoofer
     6.Change MAC(run as root)
-    7.Credits
-    8.Exit
+    7.Anon(anonymous surfing)
+    8.Credits
+    9.Exit
     """)
     user_choice = input(cl('Please select one of the option numbers:', 'yellow'))
     if user_choice == '1':
@@ -54,8 +55,12 @@ def arkmenu0():
         os.system('python lib/change_mac.py')
         os.system('python arkyide.py')
     elif user_choice == '7':
-        Credits()
+        os.system('clear')
+        os.system('python lib/anon.py')
+        os.system('python arkyide.py')
     elif user_choice == '8':
+        Credits()
+    elif user_choice == '9':
         sys.exit()
     else:
         print(cl('Wrong choice!'))
