@@ -9,8 +9,8 @@ def Credits():
     os.system('clear')
     print(cl(ff("Project Arkyide")))
     print(cl("Project Arkyide, made by: \n", "red"))
-    print(cl("Director Komrade - Project creator, Developer \nVenDis - Project Co-owner, Developer, Main Coder \nThomas Waytec - Developer, Main Coder \nSreesa - Developer", 'cyan'))
-    cont = input('Press enter to continue')
+    print(cl("Director Komrade - Project creator, Developer \nVenDis - Project Co-owner, Developer, Main Coder \nThomas Waytec - Developer, Main Coder \nSreesa - Developer \nKyyomaa - Developer", 'cyan'))
+    cont = input('Press enter to continue') 
     if cont == '':
         os.system('clear')
 
