@@ -1,12 +1,23 @@
 import os
 import sys
 from time import sleep
+#import git
 from pyfiglet import figlet_format as ff
 from termcolor import colored as cl
+import subprocess
 
 class arkyide():
     def __init__(self):
-        pass
+        self.FG_BLACK = '\033[30m'
+        self.FG_RED = '\033[31m'
+        self.FG_GREEN = '\033[92m'
+        self.FG_YELLOW = '\033[33m'
+        self.FG_BLUE = '\033[34m'
+        self.FG_MAGENTA = '\033[35m'
+        self.FG_CYAN = '\033[36m'
+        self.FG_WHITE = '\033[37m'
+        self.RESET = '\033[0m'
+        
     def Credits(self):
         os.system('clear')
         print(cl(ff("Project Arkyide")))
@@ -19,17 +30,19 @@ class arkyide():
     def arkmenu0(self):
         print('\n')
         print(cl("List of available options:", 'red'))
-        print(cl("""
-        1.E-Mail bomber
-        2.NetScan(run as root)
-        3.Tools installer
-        4.theEYE
-        5.ARP Spoofer
-        6.Change MAC(run as root)
-        7.Anon(anonymous surfing)
-        8.Credits
-        9.Exit
-        """, 'red'))
+        text = f"""
+[1] {self.FG_RED}MAIL BOMBER{self.RESET}
+[2] {self.FG_RED}NETSCAN (run as root){self.RESET}
+[3] {self.FG_RED}TOOLS INSTALLER{self.RESET}
+[4] {self.FG_RED}THE EYE{self.RESET}
+[5] {self.FG_RED}ARP SPOOFER{self.RESET}
+[6] {self.FG_RED}CHANGE MAC (run as root){self.RESET}
+[7] {self.FG_RED}ANON (anonymous surfing){self.RESET}
+[8] {self.FG_RED}CREDITS{self.RESET}
+[9] {self.FG_RED}EXIT{self.RESET}
+    """
+        print(text)
+
         user_choice = input(cl('Please select one of the option numbers:', 'yellow'))
         if user_choice == '1':
             os.system('clear')
@@ -72,20 +85,31 @@ class arkyide():
 
     os.system('clear')
     def disclamer(self):
-        file = open('.user.txt', mode='r')
-        if bool(int(file.read())):
-            file.close()
-            file = open('3pgithub_tools_in_arkyide.txt', mode='r')
-            print(cl("""Arkyide is a program which acts as an aide during penetration testing. Though some of the tools can be used for nefarious purposes, the creators are not responsible for any misuse of programs.\n """+file.read(), 'yellow'))
-            file.close()
-            agreement = input(cl("Type 'Yes' to to continue:", 'yellow')).lower().strip()
-            if agreement == 'yes':
-                file = open('.user.txt', mode='w')
-                file.write('0')
+        result = subprocess.run("pwd", capture_output=True, text=True)
+        root = result.stdout.strip()  
+        usr_txt_path = os.path.join(root, 'playground')
+
+        usr_found = False
+
+        for dirpath, dirnames, filenames in os.walk(root):
+            if '.user.txt' in filenames:
+                file = open('.user.txt', mode='r')
+                file = open('3pgithub_tools_in_arkyide.txt', mode='r')
+                print(cl("""Arkyide is a program which acts as an aide during penetration testing. 
+                         \nThough some of the tools can be used for nefarious purposes, the creators 
+                         \nare not responsible for any misuse of programs.\n\n """+file.read(), 'yellow'))
                 file.close()
+                flag = True
+                while flag:
+                    agreement = input(cl("Type 'Yes' to to continue:", 'yellow')).lower().strip()
+                    if agreement == 'yes':
+                        flag = False
+                        os.remove('.user.txt')
+                    else:
+                        print(cl('Wrong choice', 'red'))
+                        #sys.exit()
             else:
-                print(cl('Wrong choice', 'red'))
-                sys.exit()
+                pass
 
     def arkwelcomer0(self):
         os.system('clear')
