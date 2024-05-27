@@ -20,6 +20,8 @@ class arkyide():
         
     def Credits(self):
         os.system('clear')
+        
+        #y'all want cooler ascii art here too?
         print(cl(ff("Project Arkyide")))
         print(cl("Project Arkyide, made by: \n", "red"))
         print(cl("Director Komrade - Project creator, Developer \nVenDis - Project Co-owner, Developer, Main Coder \nThomas Waytec - Developer, Main Coder \nSreesa - Developer\nKyyomaa - Developer", 'cyan'))
@@ -111,22 +113,47 @@ class arkyide():
             else:
                 pass
 
+
+
+    #i dont really fw this banner. do y'all like it more like this?
+    '''
+        def arkwelcomer0(self):
+            os.system('clear')
+            letter = ff('Arkyide')
+            letter = letter.split('\n')
+            for i in range(len(letter)):
+                if i != len(letter)-1:
+                    letter[i] = '| '+letter[i]+'\t|'
+            print(cl('-'*49+'\n'+'\n'.join(letter)+'|\t\t\t\t-v1.0\t\t|'+'\n'+'-'*49, 'cyan'))
+            self.arkmenu0()
+    '''
     def arkwelcomer0(self):
         os.system('clear')
-        letter = ff('Arkyide')
-        letter = letter.split('\n')
-        for i in range(len(letter)):
-            if i != len(letter)-1:
-                letter[i] = '| '+letter[i]+'\t|'
-        print(cl('-'*49+'\n'+'\n'.join(letter)+'|\t\t\t\t-v1.0\t\t|'+'\n'+'-'*49, 'cyan'))
-        self.arkmenu0()
+        print(
+"""
+   █████████             █████                  ███      █████         
+  ███░░░░░███           ░░███                  ░░░      ░░███          
+ ░███    ░███  ████████  ░███ █████ █████ ████ ████   ███████   ██████ 
+ ░███████████ ░░███░░███ ░███░░███ ░░███ ░███ ░░███  ███░░███  ███░░███
+ ░███░░░░░███  ░███ ░░░  ░██████░   ░███ ░███  ░███ ░███ ░███ ░███████ 
+ ░███    ░███  ░███      ░███░░███  ░███ ░███  ░███ ░███ ░███ ░███░░░  
+ █████   █████ █████     ████ █████ ░░███████  █████░░████████░░██████ 
+░░░░░   ░░░░░ ░░░░░     ░░░░ ░░░░░   ░░░░░███ ░░░░░  ░░░░░░░░  ░░░░░░  
+                                     ███ ░███                          
+                                    ░░██████                           
+                                     ░░░░░░                            
+"""            
+        )
+
+        
 
 def main():
     a= arkyide()
     a.disclamer()
     a.Credits()
-    a.arkmenu0()
     a.arkwelcomer0()
+    a.arkmenu0()
+
 
     
 if __name__ == '__main__':
