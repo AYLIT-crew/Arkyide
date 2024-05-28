@@ -1,2 +1,3 @@
-termcolor
-pyfiglet
+simple_term_menu
+curses
+textwrap
