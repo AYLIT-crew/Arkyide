@@ -1,4 +1,4 @@
-import threading
+import threading, time
 import scapy.all as scapy
 from termcolor import colored as cl
 from mac_vendor_lookup import MacLookup
@@ -10,6 +10,7 @@ def check_if_root():
         pass
     else:
         print(cl('You must be root in order to run this program', 'red'))
+        time.sleep(2)
         sys.exit()
 
 def arp_scan(rip):
