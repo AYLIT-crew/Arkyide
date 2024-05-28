@@ -78,6 +78,7 @@ class arkyide():
             os.system('python arkyide.py')
         elif user_choice == '8':
             self.Credits()
+            os.system('python arkyide.py')
         elif user_choice == '9':
             sys.exit()
         else:
@@ -113,20 +114,6 @@ class arkyide():
             else:
                 pass
 
-
-
-    #i dont really fw this banner. do y'all like it more like this?
-    '''
-        def arkwelcomer0(self):
-            os.system('clear')
-            letter = ff('Arkyide')
-            letter = letter.split('\n')
-            for i in range(len(letter)):
-                if i != len(letter)-1:
-                    letter[i] = '| '+letter[i]+'\t|'
-            print(cl('-'*49+'\n'+'\n'.join(letter)+'|\t\t\t\t-v1.0\t\t|'+'\n'+'-'*49, 'cyan'))
-            self.arkmenu0()
-    '''
     def arkwelcomer0(self):
         os.system('clear')
         print(
@@ -150,7 +137,6 @@ class arkyide():
 def main():
     a= arkyide()
     a.disclamer()
-    a.Credits()
     a.arkwelcomer0()
     a.arkmenu0()
 
