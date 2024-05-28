@@ -134,7 +134,7 @@ class Aesthetic:
     def mail_bomber(self):
         print("Mail Bomber selected")
         os.system('clear')
-        os.system('python lib/email_bomber.py')
+        os.system('python lib/mail_bomber.py')
         os.system('python arkyide.py')
 
     def netscan(self):
