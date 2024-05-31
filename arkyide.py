@@ -31,7 +31,7 @@ class Aesthetic:
         disclaimer_message = (
             "###############################################################################\n"
             "#                                                                             #\n"  
-            "#  Arkyide is a program which acts as an aid during penetration testing.      #\n"
+            "#  Arkyide is a program which acts as an aide during penetration testing.      #\n"
             "#  Though some of the tools can be used for nefarious purposes, the creators  # \n"
             "#  are not responsible for any misuse of programs.                            #\n"
             "#                                                                             #\n"  
