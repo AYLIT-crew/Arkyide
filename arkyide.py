@@ -60,11 +60,11 @@ class Aesthetic:
 
         # Display the wrapped disclaimer message
         for i, line in enumerate(final_lines):
-            stdscr.addstr(y + i, x, line, cursor.color_pair(1))
+            stdscr.addstr(y + i, x, line, curses.color_pair(1))
 
         # Display the prompt to continue
         prompt_message = "Press any key to accept the disclaimer and continue..."
-        stdscr.addstr(y + len(final_lines) + 2, x, prompt_message, cursor.color_pair(1))
+        stdscr.addstr(y + len(final_lines) + 2, x, prompt_message, curses.color_pair(1))
 
         # Refresh the screen to show the message
         stdscr.refresh()
