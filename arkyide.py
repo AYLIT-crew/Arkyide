@@ -28,7 +28,7 @@ class Aesthetic:
         stdscr.clear()
 
         # Define the disclaimer message
-        disclaimer_message = (
+        disclaimer_message = (cl(
             "###############################################################################\n"
             "#                                                                             #\n"  
             "#  Arkyide is a program which acts as an aid during penetration testing.      #\n"
@@ -37,7 +37,7 @@ class Aesthetic:
             "#                                                                             #\n"  
             "###############################################################################\n"
 
-        )
+        , 'yellow'))
 
         # Get the screen dimensions
         height, width = stdscr.getmaxyx()
