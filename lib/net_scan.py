@@ -3,6 +3,7 @@ import scapy.all as scapy
 from termcolor import colored as cl
 from mac_vendor_lookup import MacLookup
 from pyfiglet import figlet_format as ff
+from simple_term_menu import TerminalMenu
 import subprocess, sys, requests, re, time, os
 
 def check_if_root():
@@ -138,29 +139,41 @@ subprocess.call('clear', shell=True)
 commands = {'getversion': 'To get the version of software run by the IP', 'getcommands': 'To get a list of commands which can be used for running a Nmap scan', 'trace': 'To trace the transfer of packets', 'getportsopen': 'To get a list of ports open in a host', 'getosversion': 'To predict the OS run by the IP',
             'stealthscan': 'Stealth Scan makes it difficult for the host to know about the scan', 'portsscan': 'To scan a list of ports of a host', 'hostdiscover': 'To discover hosts in a subnet',  'quit': 'To quit the program'}
 
+options = []
+cnt = 1
+for i in commands:
+    options.append(f'[{cnt}]'+i+'('+commands[i]+')')
+    cnt += 1
+
 while True:
-    print(cl('='*40, 'red'))
-    print(cl(ff('NetScan'), 'red'))
-    print(cl('\t\t-Powered by Nmap\n\t\t-An AYLIT production\n\t\t-v1.0', 'red'))
-    print(cl('='*40, 'red'), '\n')
-    print(cl('Commands available:', 'red'))
-    for i in commands:
-        print(cl(f'   ->{i}({commands[i]})', 'red'))
-    print('-'*20)
-    cmd = input(cl('Enter the command:', 'yellow')).lower().strip()
-    if cmd == 'quit':
+    print(cl(
+'''
+ ██████   █████           █████     █████████                               
+░░██████ ░░███           ░░███     ███░░░░░███                              
+ ░███░███ ░███   ██████  ███████  ░███    ░░░   ██████   ██████   ████████  
+ ░███░░███░███  ███░░███░░░███░   ░░█████████  ███░░███ ░░░░░███ ░░███░░███ 
+ ░███ ░░██████ ░███████   ░███     ░░░░░░░░███░███ ░░░   ███████  ░███ ░███ 
+ ░███  ░░█████ ░███░░░    ░███ ███ ███    ░███░███  ███ ███░░███  ░███ ░███ 
+ █████  ░░█████░░██████   ░░█████ ░░█████████ ░░██████ ░░████████ ████ █████
+░░░░░    ░░░░░  ░░░░░░     ░░░░░   ░░░░░░░░░   ░░░░░░   ░░░░░░░░ ░░░░ ░░░░░ 
+'''
+        , 'red'))
+    menu_highlight_style = ('standout', 'fg_gray', 'bold')
+    term_menu = TerminalMenu(options, menu_highlight_style=menu_highlight_style)
+    option = term_menu.show()
+    if option == 8:
         subprocess.call('clear', shell=True)
         sys.exit()
         print(cl(data.decode(), 'blue'))
-    elif cmd == 'getcommands':
+    elif option == 1:
         data = subprocess.check_output(['nmap', '-h'])
         print('-'*20)
         print(cl(data.decode(), 'blue'))
-    elif cmd == 'getversion':
+    elif option == 0:
         data = subprocess.check_output(['nmap', '--version'])
         print(cl(getversion(data), 'blue'))
         print('-'*20)
-    elif cmd == 'hostdiscover':
+    elif option == 7:
         route_data = subprocess.check_output('route'.split()).decode().split('\n')
         router_ip = ".".join(route_data[2].split()[1].split('.')[:-1])+'.0/24'
         ips, macs = [], []
@@ -204,7 +217,7 @@ while True:
             print(cl('-'*30, 'blue'))
     else:
         addr = input(cl('Enter address:', 'yellow'))
-        if cmd == 'trace':
+        if option == 2:
             print('-'*10)
             print(cl("Options:\n1. TCP Traceroute(tcptraceroute)\n2. UDP(traceroute)\n3. Nmap's traceroute", 'red'))
             print('-'*10)
@@ -235,7 +248,7 @@ while True:
                     print(cl(f'ISP:{ip_infos[i][0]}\nCity:{ip_infos[i][1]}\nCountry:{ip_infos[i][-1]}', 'blue'))
                     print('-'*10)
             print('-'*20)
-        elif cmd == 'getportsopen':
+        elif option == 3:
             ctr = f'nmap {addr}'
             print(cl(f'Command to run: {ctr}', 'red'))
             term_data = subprocess.check_output(ctr.split(' ')).decode()
@@ -250,7 +263,7 @@ while True:
                 for i in get_open_ports:
                     print(cl(i, 'blue'))
             print('-'*20)
-        elif cmd == 'getosversion':
+        elif option == 4:
             ctr = f'nmap -O {addr}'
             print(cl(f'Command to run: {ctr}', 'red'))
             ags = input(cl('Aggressive OS guess(y/n)? ', 'yellow'))
@@ -263,7 +276,7 @@ while True:
             get_os_data = getosversion(data)
             print(cl(get_os_data, 'blue'))
             print('-'*20)
-        elif cmd == 'stealthscan':
+        elif option == 5:
             ctr = f'nmap -sS {addr}'
             print(cl(f'Command to run: {ctr}', 'red'))
             data = subprocess.check_output(ctr.split(' '))
@@ -272,7 +285,7 @@ while True:
             print('-'*10)
             print(cl(data.decode(), 'blue'))
             print('-'*20)
-        elif cmd == 'portsscan':
+        elif option == 6:
             ports_option = input(cl('Enter ports manually(y/n)? ', 'yellow'))
             if ports_option == 'y':
                 ports = list(map(str, input(cl('Enter the ports(eg:- 22 35 45):', 'yellow')).split(' ')))
