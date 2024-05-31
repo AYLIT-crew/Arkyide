@@ -28,7 +28,7 @@ class Aesthetic:
         stdscr.clear()
 
         # Define the disclaimer message
-        disclaimer_message = (cl(
+        disclaimer_message = (
             "###############################################################################\n"
             "#                                                                             #\n"  
             "#  Arkyide is a program which acts as an aid during penetration testing.      #\n"
@@ -37,7 +37,7 @@ class Aesthetic:
             "#                                                                             #\n"  
             "###############################################################################\n"
 
-        , 'yellow'))
+        )
 
         # Get the screen dimensions
         height, width = stdscr.getmaxyx()
@@ -55,13 +55,16 @@ class Aesthetic:
         y = height // 2 - len(final_lines) // 2
         x = 2
 
+        curses.start_color()
+        curses.init_pair(1, curses.COLOR_YELLOW, curses.COLOR_BLACK)
+
         # Display the wrapped disclaimer message
         for i, line in enumerate(final_lines):
-            stdscr.addstr(y + i, x, line)
+            stdscr.addstr(y + i, x, line, cursor.color_pair(1))
 
         # Display the prompt to continue
         prompt_message = "Press any key to accept the disclaimer and continue..."
-        stdscr.addstr(y + len(final_lines) + 2, x, prompt_message)
+        stdscr.addstr(y + len(final_lines) + 2, x, prompt_message, cursor.color_pair(1))
 
         # Refresh the screen to show the message
         stdscr.refresh()
