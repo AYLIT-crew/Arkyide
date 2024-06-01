@@ -87,50 +87,67 @@ class Aesthetic:
                 pass
 
     def menu(self):
-        os.system('clear')
-        print(cl(
-"""
- █████╗ ██████╗ ██╗  ██╗██╗   ██╗██╗██████╗ ███████╗
-██╔══██╗██╔══██╗██║ ██╔╝╚██╗ ██╔╝██║██╔══██╗██╔════╝
-███████║██████╔╝█████╔╝  ╚████╔╝ ██║██║  ██║█████╗  
-██╔══██║██╔══██╗██╔═██╗   ╚██╔╝  ██║██║  ██║██╔══╝  
-██║  ██║██║  ██║██║  ██╗   ██║   ██║██████╔╝███████╗
-╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝╚═════╝ ╚══════╝
-""",'red'))
-        options = ("[1] MAIL BOMBER",
-                   "[2] NETSCAN (run as root)",
-                   "[3] TOOLS INSTALLER",
-                   "[4] THE EYE",
-                   "[5] ARP SPOOFER",
-                   "[6] CHANGE MAC (run as root)",
-                   "[7] ANON (anonymous surfing)",
-                   "[8] CREDITS",
-                   "[9] EXIT")
+        while True:
+            os.system('clear')
+            
+            # Determine the screen height and width
+            #I will be using this in the future -Kyoma
+            height, width = os.popen('stty size', 'r').read().split()
+            height = int(height)
+            width = int(width)
+            padding_lines = height // 2
 
-        menu_highlight_style = ("standout", "fg_gray", "bold")
-        terminal_menu = TerminalMenu(options, menu_highlight_style=menu_highlight_style)
-        menu_entry_index = terminal_menu.show()
+            
+            print(cl(
+    """
+     █████╗ ██████╗ ██╗  ██╗██╗   ██╗██╗██████╗ ███████╗
+    ██╔══██╗██╔══██╗██║ ██╔╝╚██╗ ██╔╝██║██╔══██╗██╔════╝
+    ███████║██████╔╝█████╔╝  ╚████╔╝ ██║██║  ██║█████╗  
+    ██╔══██║██╔══██╗██╔═██╗   ╚██╔╝  ██║██║  ██║██╔══╝  
+    ██║  ██║██║  ██║██║  ██╗   ██║   ██║██████╔╝███████╗
+    ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝╚═════╝ ╚══════╝
+    """,'red'))
+            options = ("[1] MAIL BOMBER",
+                       "[2] NETSCAN (run as root)",
+                       "[3] TOOLS INSTALLER",
+                       "[4] THE EYE",
+                       "[5] ARP SPOOFER",
+                       "[6] CHANGE MAC (run as root)",
+                       "[7] ANON (anonymous surfing)",
+                       "[8] CREDITS",
+                       "[9] EXIT")
 
-        actions = {
-            0: self.mail_bomber,
-            1: self.netscan,
-            2: self.tools_installer,
-            3: self.the_eye,
-            4: self.arp_spoofer,
-            5: self.change_mac,
-            6: self.anon_surfing,
-            7: self.credits,
-            8: self.exit_program
-        }
 
-        selected_action = actions.get(menu_entry_index, self.invalid_selection)
-        selected_action()
+            menu_highlight_style = ("standout", "fg_gray", "bold")
+            terminal_menu = TerminalMenu(options, menu_highlight_style=menu_highlight_style)
+            menu_entry_index = terminal_menu.show()
 
-    def mail_bomber(self):
-        print("Mail Bomber selected")
+            actions = {
+                0: self.mail_bomber,
+                1: self.netscan,
+                2: self.tools_installer,
+                3: self.the_eye,
+                4: self.arp_spoofer,
+                5: self.change_mac,
+                6: self.anon_surfing,
+                7: self.credits,
+                8: self.exit_program
+            }
+
+            selected_action = actions.get(menu_entry_index, self.invalid_selection)
+            selected_action()
+            
+
+            
+            
+            
+            
+
+    def mail_bomber(self):        
         os.system('clear')
         os.system('python lib/mail_bomber.py')
         os.system('python arkyide.py')
+        
 
     def netscan(self):
         print("NetScan selected (run as root)")
