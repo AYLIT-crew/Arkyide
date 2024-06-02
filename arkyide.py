@@ -1,11 +1,21 @@
 from termcolor import colored as cl
 from simple_term_menu import TerminalMenu
-import os, time, textwrap, curses, subprocess 
+import os, time, textwrap, curses, subprocess, json
 
-class Aesthetic:
+class Arkyde:
     def __init__(self):
         pass
+        self.settings_file = ".settings.json"
+        self.settings = self.load_settings()
+    def load_settings(self):
+        if os.path.exists(self.settings_file):
+            with open(self.settings_file, 'r') as file:
+                return json.load(file)
+        return {"disclamer": "enabled"}  # example w the disclamer -kyoma
 
+    def save_settings(self):
+        with open(self.settings_file, 'w') as file:
+            json.dump(self.settings, file)
 
     def Credits(self):
         os.system('clear')
@@ -73,6 +83,22 @@ class Aesthetic:
         stdscr.getch()
 
     def disclaimer_start(self):
+        
+        try:
+            with open(".settings.json") as settings:
+                settings = json.load(settings)
+                if settings["disclamer"] == "enabled":
+                    curses.wrapper(self.show_curses_disclaimer)
+                    with open(".settings.json", "w") as settings:
+                        json.dump({"disclamer": "disabled"}, settings)
+                else:
+                    pass
+        except FileNotFoundError:
+            print("cannot find config file, where is it???")
+        
+        
+        
+        
         result = subprocess.run("pwd", capture_output=True, text=True)
         root = result.stdout.strip()  
         usr_txt_path = os.path.join(root, 'playground')
@@ -114,8 +140,9 @@ class Aesthetic:
                        "[5] ARP SPOOFER",
                        "[6] CHANGE MAC (run as root)",
                        "[7] ANON (anonymous surfing)",
-                       "[8] CREDITS",
-                       "[9] EXIT")
+                       "[8] SETTINGS",
+                       "[9] CREDITS",
+                       "[-] EXIT")
 
 
             menu_highlight_style = ("standout", "fg_gray", "bold")
@@ -130,8 +157,9 @@ class Aesthetic:
                 4: self.arp_spoofer,
                 5: self.change_mac,
                 6: self.anon_surfing,
-                7: self.credits,
-                8: self.exit_program
+                7: self.settings,
+                8: self.credits,
+                9: self.exit_program
             }
 
             selected_action = actions.get(menu_entry_index, self.invalid_selection)
@@ -193,6 +221,10 @@ class Aesthetic:
         print("Credits selected")
         self.Credits()
         os.system('python arkyide.py')
+    
+    def settings(self):
+        print("SETTINGS MENU")
+
 
     def exit_program(self):
         print("Exiting program")
@@ -202,7 +234,7 @@ class Aesthetic:
         print("Invalid selection")
 
 def main():
-    a = Aesthetic() 
+    a = Arkyde() 
     a.disclaimer_start()
     a.menu()
 
