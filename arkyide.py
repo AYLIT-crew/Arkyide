@@ -41,8 +41,8 @@ class Arkyde:
         disclaimer_message = (
             "################################################################################\n"
             "#                                                                              #\n"  
-            "#  Arkyide is a program which acts as an aide during penetration testing.      #\n"
-            "#  Though some of the tools can be used for nefarious purposes, the creators   # \n"
+            "#  Arkyide is a program which acts as an aid during penetration testing.      #\n"
+            "#  Though some of the tools can be used for malicious purposes, the creators   # \n"
             "#  are not responsible for any misuse of programs.                             #\n"
             "#                                                                              #\n"  
             "################################################################################\n"
@@ -82,6 +82,8 @@ class Arkyde:
         # Wait for the user to press a key
         stdscr.getch()
 
+
+    #lmk if y'all wanna change it -ky
     def disclaimer_start(self):
         
         try:
@@ -157,7 +159,7 @@ class Arkyde:
                 4: self.arp_spoofer,
                 5: self.change_mac,
                 6: self.anon_surfing,
-                7: self.settings,
+                7: self.setting,
                 8: self.credits,
                 9: self.exit_program
             }
@@ -222,8 +224,10 @@ class Arkyde:
         self.Credits()
         os.system('python arkyide.py')
     
-    def settings(self):
+    def setting(self):
         print("SETTINGS MENU")
+        exit()
+
 
 
     def exit_program(self):
