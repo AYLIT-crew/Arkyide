@@ -1,3 +1,4 @@
 simple_term_menu
-windows-curses
-textwrap
+termcolor
+#windows-curses
+#textwrap - is built-in --Allen.
