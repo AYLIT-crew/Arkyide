@@ -11,7 +11,7 @@
 
 ## Development Status
 
-Project Arkyide is currently in development. The estimated completion time is expected to be before the summer.
+Project Arkyide is currently in development. The estimated completion time is expected in winter 2024.
 
 ## Getting Started
 
