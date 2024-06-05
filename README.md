@@ -45,7 +45,7 @@ Project Arkyide is currently in development. The estimated completion time is ex
 #### Step 4: Run the Docker Container
 
 After building the image, run the Docker container using the following command:
-`docker run -it arkyide``
+`docker run -it arkyide`
 
 - Now you should access the Menu on terminal.
 
