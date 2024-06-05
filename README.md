@@ -51,7 +51,7 @@ After building the image, run the Docker container using the following command:
 
 ## Contribution
 
-We welcome contributions! Please fork the repository and submit pull requests. If you encounter any issues, feel free to open an issue on GitHub.
+Check `CONTRIBUTING.md` for more info.
 
 ## License
 
