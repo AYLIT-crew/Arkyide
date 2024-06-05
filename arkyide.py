@@ -189,10 +189,12 @@ class Arkyide:
 
     def tools_installer(self):
         print("Tools Installer selected")
-        subprocess.call('clera',shell=True)
+        #time.sleep(3)
+        exit()
+        #subprocess.call('clear',shell=True)
         
-        subprocess.call('python lib/ARKTLinstaller.py',shell=True)
-        subprocess.call('python arkyide.py',shell=True)
+        #subprocess.call('python lib/ARKTLinstaller.py',shell=True)
+        #subprocess.call('python arkyide.py',shell=True)
    
         
     def the_eye(self):
@@ -200,24 +202,30 @@ class Arkyide:
         subprocess.call('clear',shell=True)
         subprocess.call('python lib/theEYE/theEYE.py',shell=True)
         subprocess.call('python arkyide.py',shell=True)
+        exit()
+
 
     def arp_spoofer(self):
         print("ARP Spoofer selected")
         subprocess.call('clear',shell=True)
         subprocess.call('python lib/arp_spoofer.py',shell=True)
         subprocess.call('python arkyide.py',shell=True)
+        exit()
+
 
     def change_mac(self):
         print("Change MAC selected (run as root)")
         subprocess.call('clear',shell=True)
         subprocess.call('python lib/change_mac.py',shell=True)
         subprocess.call('python arkyide.py',shell=True)
+        exit()
 
     def anon_surfing(self):
         print("Anon Surfing selected")
         subprocess.call('clear',shell=True)
         subprocess.call('python lib/anon.py',shell=True)
         subprocess.call('python arkyide.py',shell=True)
+        exit()
 
 
 
