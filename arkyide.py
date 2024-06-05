@@ -18,7 +18,7 @@ class Arkyide:
             json.dump(self.settings, file)
 
     def Credits(self):
-        os.system('clear')
+        subprocess.call('clear',shell = True)
         
         #y'all want cooler ascii art here too?
         print("Project Arkyide")
@@ -26,7 +26,7 @@ class Arkyide:
         print(("Director Komrade - Project creator, Developer \nVenDis - Project Co-owner, Developer, Main Coder \nThomas Waytec - Developer, Main Coder \nSreesa - Developer\nKyyomaa - Developer"))
         cont = input('Press enter to continue')
         if cont == '':
-            os.system('clear')
+            subprocess.call('clear',shell = True)
 
     def show_curses_disclaimer(self, stdscr):
         # Initialize curses colors
@@ -174,58 +174,61 @@ class Arkyide:
             
 
     def mail_bomber(self):        
-        os.system('clear')
-        os.system('python lib/mail_bomber.py')
-        os.system('python arkyide.py')
-        
+        subprocess.call('clear',shell=True)
+        subprocess.call('python lib/mail_bomber.py',shell=True)
+        subprocess.call('python arkyide.py',shell=True)
 
     def netscan(self):
         print("NetScan selected (run as root)")
         print(('Requires nmap module installed to work'))
         time.sleep(2)
-        os.system('clear')
-        os.system('python lib/net_scan.py')
-        os.system('python arkyide.py')
+        subprocess.call('clear',shell=True)
+        subprocess.call('python lib/net_scan.py',shell=True)
+        subprocess.call('python arkyide.py',shell=True)
+
 
     def tools_installer(self):
         print("Tools Installer selected")
-        os.system('clear')
-        os.system('python lib/ARKTLinstaller.py')
-        os.system('python arkyide.py')
+        subprocess.call('clera',shell=True)
+        
+        subprocess.call('python lib/ARKTLinstaller.py',shell=True)
+        subprocess.call('python arkyide.py',shell=True)
+   
         
     def the_eye(self):
         print("The Eye selected")
-        os.system('clear')
-        os.system('python lib/theEYE/theEYE.py')
-        os.system('python arkyide.py')
+        subprocess.call('clear',shell=True)
+        subprocess.call('python lib/theEYE/theEYE.py',shell=True)
+        subprocess.call('python arkyide.py',shell=True)
 
     def arp_spoofer(self):
         print("ARP Spoofer selected")
-        os.system('clear')
-        os.system('python lib/arp_spoofer.py')
-        os.system('python arkyide.py')
+        subprocess.call('clear',shell=True)
+        subprocess.call('python lib/arp_spoofer.py',shell=True)
+        subprocess.call('python arkyide.py',shell=True)
 
     def change_mac(self):
         print("Change MAC selected (run as root)")
-        os.system('clear')
-        os.system('python lib/change_mac.py')
-        os.system('python arkyide.py')
+        subprocess.call('clear',shell=True)
+        subprocess.call('python lib/change_mac.py',shell=True)
+        subprocess.call('python arkyide.py',shell=True)
 
     def anon_surfing(self):
         print("Anon Surfing selected")
-        os.system('clear')
-        os.system('python lib/anon.py')
-        os.system('python arkyide.py')
+        subprocess.call('clear',shell=True)
+        subprocess.call('python lib/anon.py',shell=True)
+        subprocess.call('python arkyide.py',shell=True)
 
 
 
     def credits(self):
         print("Credits selected")
         self.Credits()
-        os.system('python arkyide.py')
+        subprocess.call('python arkyide.py',shell=True)
     
     def setting(self):
         print("SETTINGS MENU")
+        time.sleep(3) # 
         exit()
 
 
@@ -238,7 +241,7 @@ class Arkyide:
         print("Invalid selection")
 
 def main():
-    a = Arkyde() 
+    a = Arkyide() 
     a.disclaimer_start()
     a.menu()
 
