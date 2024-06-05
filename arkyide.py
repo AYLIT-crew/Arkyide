@@ -2,7 +2,7 @@ from termcolor import colored as cl
 from simple_term_menu import TerminalMenu
 import os, time, textwrap, curses, subprocess, json
 
-class Arkyde:
+class Arkyide:
     def __init__(self):
         pass
         self.settings_file = ".settings.json"
