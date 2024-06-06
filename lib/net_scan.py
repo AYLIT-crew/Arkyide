@@ -160,7 +160,7 @@ class NetScan:
         options = []
         cnt = 1
         for i in commands:
-            if cnt != 8:
+            if cnt < 9:
                 options.append(f'[{cnt}]'+i+'('+commands[i]+')')
             else:
                 options.append(f'[-]'+i+'('+commands[i]+')')
