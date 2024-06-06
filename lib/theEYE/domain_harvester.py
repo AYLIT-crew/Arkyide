@@ -86,9 +86,16 @@ def ips_data(d):
 
 subprocess.call('clear', shell=True)
 
-print(cl('='*43, 'red'))
-print(cl(ff('Hollow')+'\n\t\t-A domain harvester program\n\t\t-An AYLIT production', 'red'))
-print(cl('='*43, 'red'))
+print(cl('''
+ █████   █████          ████  ████                          
+░░███   ░░███          ░░███ ░░███                          
+ ░███    ░███   ██████  ░███  ░███   ██████  █████ ███ █████
+ ░███████████  ███░░███ ░███  ░███  ███░░███░░███ ░███░░███ 
+ ░███░░░░░███ ░███ ░███ ░███  ░███ ░███ ░███ ░███ ░███ ░███ 
+ ░███    ░███ ░███ ░███ ░███  ░███ ░███ ░███ ░░███████████  
+ █████   █████░░██████  █████ █████░░██████   ░░████░████   
+░░░░░   ░░░░░  ░░░░░░  ░░░░░ ░░░░░  ░░░░░░     ░░░░ ░░░░             
+         ''', 'red'))
 
 domain = input(cl('Enter domain:', 'yellow'))
 cmd = f'python ./theHarvester/theHarvester.py -d {domain} -b dnsdumpster,rapiddns,subdomaincenter,subdomainfinderc99,urlscan'
