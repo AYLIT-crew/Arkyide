@@ -180,11 +180,9 @@ class Arkyide:
 
     def netscan(self):
         print("NetScan selected (run as root)")
-        print(('Requires nmap module installed to work'))
-        time.sleep(2)
-        subprocess.call('clear',shell=True)
-        subprocess.call('python lib/net_scan.py',shell=True)
-        subprocess.call('python arkyide.py',shell=True)
+        os.system('clear')
+        os.system('python lib/net_scan.py')
+        os.system('python arkyide.py')
 
 
     def tools_installer(self):

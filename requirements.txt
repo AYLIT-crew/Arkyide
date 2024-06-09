@@ -1,5 +1,7 @@
 simple_term_menu
 termcolor
 pyfiglet
-#windows-curses
-#textwrap - is built-in --Allen.
+scapy
+mac-vendor-lookup
+requests
+
