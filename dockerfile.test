@@ -1,0 +1,6 @@
+# Use the image built from Dockerfile.build as the base
+FROM arkyide:latest AS builder
+
+WORKDIR /app
+
+CMD ["pytest"]
