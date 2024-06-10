@@ -1,0 +1,24 @@
+name: Build and Test CI on Container
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:  # Combine build and test for efficiency
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx (optional)
+        uses: docker/setup-buildx-action@v2  # Optional for multi-platform builds
+
+      - name: Build application image
+        id: build-app
+        run: |
+          docker build -t arkyide:latest --build-context . --file dockerfile.build
+
+      - name: Test application image
+        run: |
+          docker run -t arkyide:latest pytest
