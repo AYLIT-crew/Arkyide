@@ -11,7 +11,7 @@ class Arkyide:
         if os.path.exists(self.settings_file):
             with open(self.settings_file, 'r') as file:
                 return json.load(file)
-        return {"disclamer": "enabled"}  # example w the disclamer -kyoma
+        return {"disclaimer": "enabled"}  # example w the disclamer -kyoma
 
     def save_settings(self):
         with open(self.settings_file, 'w') as file:
@@ -20,10 +20,17 @@ class Arkyide:
     def Credits(self):
         subprocess.call('clear',shell = True)
         
-        #y'all want cooler ascii art here too?
-        print("Project Arkyide")
-        print(("Project Arkyide, made by: \n", "red"))
-        print(("Director Komrade - Project creator, Developer \nVenDis - Project Co-owner, Developer, Main Coder \nThomas Waytec - Developer, Main Coder \nSreesa - Developer\nKyyomaa - Developer"))
+        credits = (
+    "Project Arkyide\n"
+    "Project Arkyide, made by: \n"
+    "Director Komrade - Project creator, Developer \n"
+    "VenDis - Project Co-owner, Developer, Main Coder \n"
+    "Thomas Waytec - Developer, Main Coder \n"
+    "Sreesa - Developer\n"
+    "Kyyomaa - Developer\n"
+    "Allen Rodger - Developer, Project Manager\n"
+)
+        print(credits)
         cont = input('Press enter to continue')
         if cont == '':
             subprocess.call('clear',shell = True)
@@ -89,10 +96,10 @@ class Arkyide:
         try:
             with open(".settings.json") as settings:
                 settings = json.load(settings)
-                if settings["disclamer"] == "enabled":
+                if settings["disclaimer"] == "enabled":
                     curses.wrapper(self.show_curses_disclaimer)
                     with open(".settings.json", "w") as settings:
-                        json.dump({"disclamer": "disabled"}, settings)
+                        json.dump({"disclaimer": "disabled"}, settings)
                 else:
                     pass
         except FileNotFoundError:

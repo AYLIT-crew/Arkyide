@@ -4,4 +4,5 @@ pyfiglet
 scapy
 mac-vendor-lookup
 requests
+pytest
 
