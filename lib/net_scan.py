@@ -120,7 +120,7 @@ class NetScan:
             ips = []
             for i in d:
                 try:
-                    search = re.search('\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}', i)
+                    search = re.search(r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}', i)
                     ips.append(search.group())
                 except:
                     pass
@@ -133,7 +133,7 @@ class NetScan:
             d = d[ind:]
             ips = []
             for i in d:
-                search_result = re.search('\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}', i)
+                search_result = re.search(r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}', i)
                 if search_result != None:
                     ips.append(search_result.group())
         return ips
