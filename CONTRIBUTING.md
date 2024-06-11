@@ -1,47 +1,38 @@
-### Welcome
+## Contributing to Our Project
 
-We're excited you want to contribute to the Arkyide project! Your help will make it even greater and more useful for everyone. We encourage you to join our Discord community to chat about the project: https://discord.gg/83TzFGhY
+Thank you for considering contributing to Arkyide Project! We welcome contributions of all kinds, and we're excited to see what you'll bring to the table. To get started, please follow the guidelines below.
 
-## Getting Started
+## Join Our Community
 
-Before diving in, please set up your development environment following the instructions in our `README.md` file.
+We invite you to join our Discord server to stay connected with the community, ask questions, and get support.
+
+Invitation link: https://discord.gg/z56VYCq8
+
 
 ## How to Contribute
 
-Here's a general workflow to guide your contributions:
+### Reporting Issues
 
-1. **Fork the repository:** Create your own copy of the project on GitHub.
-2. **Create a new branch:** This will allow you to work on your changes without affecting the main project codebase.
-3. **Create an issue (optional):** If you're addressing a specific bug or proposing a new feature, describe it in an issue on: https://github.com/AYLIT-crew/Arkyide/issues
-4. **Work on your contribution:**
-    - You can contribute by solving existing issues or creating new ones based on your ideas.
-    - Make code modifications as needed.
-5. **Submit a pull request:** Once your changes are ready, submit a pull request to propose them to the main project codebase.
+If you find any bugs or have a feature request, please open an issue on GitHub. Make sure to provide detailed information to help us understand the problem or the feature you're requesting.
 
-## Writing Issue Guidelines
+### Pull Requests
 
-To help us keep track of issues effectively, please follow these guidelines when submitting them:
+1. **Fork the repository** and create your branch from `main`.
+2. **Make your changes** and ensure your code passes all tests.
+3. **Submit a pull request** to the `main` branch.
 
-**Format:**
+### Pull Request Guidelines
 
-`[TYPE - id] - Short Description`
+- Ensure your code passes all tests before submitting a pull request.
+- Include clear descriptions and related issue numbers in your pull request.
+- Follow the coding style and conventions used in the project.
 
-**Explanation:**
+### Handling CI Check Failures
 
-- **TYPE:** Choose a category that best describes your issue:
-    - `FIXME` - Minor bugs, major bugs, and side effect fixes.
-    - `TODO` - New feature planned for future implementation.
-    - `IDEA` - Any thought or suggestion you'd like to share in detail.
-    - `ENHANCEMENT` - Upgrade or modification to an existing feature.
-    - `DOCUMENTATION` - Request for new documentation or fixes/todos related to existing documentation.
-    - `REFACTOR` - Request to improve code structure without changing functionality.
-- **id:** A unique number to track the issue (e.g., 001, 002, 003).
-- **Short Description:** A clear and concise description of the issue in plain text.
+If your pull request fails the CI checks, please follow these steps:
 
-**Example:**
+1. **Fix Code to Pass Tests**: Review the CI logs, identify the issues, and make the necessary changes to pass all tests.
+2. **Alert Someone to Analyze Tests**: If you're unable to resolve the issues, alert someone from the team to analyze the test failures.
+3. **Recreate Some Tests if Nothing Else Works**: As a last resort, you may need to recreate some tests to ensure they accurately reflect the current state of the code.
 
-`[IDEA - 001] - System to track our todos, bug fixes, and much more!`
-
-## Testing (W.I.P.)
-
-We are currently not using automated tests in this project.
+We appreciate your effort in maintaining the quality of the codebase and thank you for your contributions!
