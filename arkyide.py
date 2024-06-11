@@ -20,16 +20,7 @@ class Arkyide:
     def Credits(self):
         subprocess.call('clear',shell = True)
         
-        credits = (
-    "Project Arkyide\n"
-    "Project Arkyide, made by: \n"
-    "Director Komrade - Project creator, Developer \n"
-    "VenDis - Project Co-owner, Developer, Main Coder \n"
-    "Thomas Waytec - Developer, Main Coder \n"
-    "Sreesa - Developer\n"
-    "Kyyomaa - Developer\n"
-    "Allen Rodger - Developer, Project Manager\n"
-)
+        credits = """Project Arkyide\nProject Arkyide, made by: \nDirector Komrade - Project creator, Developer \nVenDis - Project Co-owner, Developer, Main Coder \nThomas Waytec - Developer, Main Coder \nSreesa - Developer\nKyyomaa - Developer\nAllen Rodger - Developer, Project Manager\n"""
         print(credits)
         cont = input('Press enter to continue')
         if cont == '':
