@@ -12,4 +12,5 @@ RUN apt-get update && apt-get install -y nmap
 COPY . .
 
 # Define a CMD to be informative (can be overridden during execution)
-CMD ["echo", "Application image ready"]
+# CMD ["echo", "Application image ready"]
+CMD ["python", "arkyide.py"]
