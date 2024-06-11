@@ -55,11 +55,30 @@ def test_save_settings(tmp_path, arkyide_instance):
         saved_settings = json.load(file)
     
     assert saved_settings == settings_data
+#Validating...
+def test_credits(self, capfd, arkyide_instance, monkeypatch):
+    with capfd.capture() as output:
+        arkyide_instance.Credits()
 
+    # Assert the captured output matches the expected credits text (multiline string)
+    assert output.captured[0].out == """Project Arkyide\nProject Arkyide, made by: \nDirector Komrade - Project creator, Developer \nVenDis - Project Co-owner, Developer, Main Coder \nThomas Waytec - Developer, Main Coder \nSreesa - Developer\nKyyomaa - Developer\nAllen Rodger - Developer, Project Manager\n"""
+    
+#Validating...
+def test_setting(self, arkyide_instance, monkeypatch):
+    # Patch time.sleep to avoid actual delay during testing
+    mock_sleep = monkeypatch.patch('time.sleep')
 
-def test_show_curses_disclaimer(capfd, monkeypatch, arkyide_instance):
-    pass
-def test_disclaimer_start_existing_settings(tmp_path, monkeypatch, arkyide_instance):
-    pass
-def test_menu(capfd, monkeypatch, arkyide_instance):
-    pass
+    arkyide_instance.setting()
+
+    # Assert that time.sleep was called
+    assert mock_sleep.called
+
+    # Assert that time.sleep was called with the expected argument (3 seconds)
+    mock_sleep.assert_called_once_with(3)
+
+#Validating...
+def test_invalid_selection(self, capfd, arkyide_instance):
+    with capfd.capture() as output:
+        arkyide_instance.invalid_selection()
+
+    assert output.captured[0].out == "Invalid selection\n"
