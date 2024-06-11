@@ -4,11 +4,12 @@ import json
 import pytest
 from unittest.mock import patch, MagicMock
 import sys
-from unittest.mock import patch
 import subprocess
-from unittest.mock import patch, MagicMock
 
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from lib.net_scan import NetScan
 
-from arkyide.lib import netscan
+
+# Ignore this test, it's just for testing purpose
+def test_net_scan():
+    assert 1 == 1
