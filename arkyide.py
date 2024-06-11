@@ -11,7 +11,7 @@ class Arkyide:
         if os.path.exists(self.settings_file):
             with open(self.settings_file, 'r') as file:
                 return json.load(file)
-        return {"disclaimer": "enabled"}  # example w the disclamer -kyoma
+        return {"disclaimer": "enabled"}  # example w the disclaimer -kyoma
 
     def save_settings(self):
         with open(self.settings_file, 'w') as file:
