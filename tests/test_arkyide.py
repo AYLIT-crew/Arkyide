@@ -20,6 +20,16 @@ def arkyide_instance():
     return Arkyide()
 
 def test_load_settings_existing_file(tmp_path, arkyide_instance):
+    """Tests if load_settings method correctly loads existing settings file.
+
+This test creates a temporary settings file with a specific content using the `tmp_path` fixture.
+It then sets the `settings_file` attribute of the `arkyide_instance` to the path of the temporary file.
+The test calls the `load_settings` method and verifies if the returned dictionary (`settings`) matches the expected settings data (`settings_data`).
+
+Args:
+    tmp_path: Pytest fixture that provides a temporary directory path.
+    arkyide_instance: A fixture providing an instance of the Arkyide class.
+"""
     settings_data = {"disclaimer": "enabled"}  
     settings_file = tmp_path / "settings.json"
     with open(settings_file, 'w') as file:
@@ -30,7 +40,16 @@ def test_load_settings_existing_file(tmp_path, arkyide_instance):
     assert settings == settings_data
 
 def test_load_settings_non_existing_file(tmp_path, arkyide_instance):
-    
+    """Tests if load_settings returns default settings for non-existent file.
+
+This test creates a temporary directory path for the settings file but doesn't create the file itself.
+It then sets the `settings_file` attribute of the `arkyide_instance` to the path of the non-existent file.
+The test calls the `load_settings` method and verifies if the returned dictionary (`settings`) matches the default settings (`{"disclaimer": "enabled"}`) provided by the method when the file is missing.
+
+Args:
+    tmp_path: Pytest fixture that provides a temporary directory path.
+    arkyide_instance: A fixture providing an instance of the Arkyide class.
+"""
     settings_file = tmp_path / "settings.json"
     
     arkyide_instance.settings_file = str(settings_file)
@@ -41,6 +60,18 @@ def test_load_settings_non_existing_file(tmp_path, arkyide_instance):
 
 
 def test_save_settings(tmp_path, arkyide_instance):
+    """Tests if save_settings correctly saves the instance settings to a file.
+
+This test creates a temporary path for the settings file and sets the `settings_file` attribute of `arkyide_instance` to that path.
+It assigns a specific dictionary (`settings_data`) to the `settings` attribute of the `arkyide_instance`.
+The test calls the `save_settings` method to trigger saving the settings.
+
+After saving, the test opens the created settings file (`settings_file`) and loads its content using `json.load`. It then verifies if the loaded settings (`saved_settings`) match the original settings data (`settings_data`) assigned before saving.
+
+Args:
+    tmp_path: Pytest fixture that provides a temporary directory path.
+    arkyide_instance: A fixture providing an instance of the Arkyide class.
+"""
     settings_data = {"disclaimer": "disabled"}
     
     settings_file = tmp_path / ".settings.json"
@@ -55,8 +86,6 @@ def test_save_settings(tmp_path, arkyide_instance):
         saved_settings = json.load(file)
     
     assert saved_settings == settings_data
-# - -
-import re
 
 def test_credits(capfd, arkyide_instance, monkeypatch):
     """Tests if the Credits method of arkyide_instance prints the expected output.
@@ -100,8 +129,9 @@ Allen Rodger - Developer, Project Manager"""
     # Assert the captured output matches the expected credits text (multiline string)
     assert output.strip() == expected_credits
 
-#TODO: Define what we expect from Settings on arkyide menu
+
 def test_setting(arkyide_instance, monkeypatch):
+    """#TODO: Define what we expect from Settings on arkyide menu"""
     pass
 
 def test_invalid_selection(capfd, arkyide_instance):
