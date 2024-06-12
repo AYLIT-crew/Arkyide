@@ -8,6 +8,8 @@ import sys
 import subprocess
 import pytest
 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from arkyide import Arkyide
 
 @pytest.fixture
@@ -25,11 +27,12 @@ Args:
     tmp_path: Pytest fixture that provides a temporary directory path.
     arkyide_instance: A fixture providing an instance of the Arkyide class.
 """
-    settings_data = {"disclaimer": "enabled"}  
+    settings_data = {"disclaimer": "enabled"} 
+
     settings_file = tmp_path / "settings.json"
     with open(settings_file, 'w') as file:
         json.dump(settings_data, file)
-    
+
     arkyide_instance.settings_file = str(settings_file)
     settings = arkyide_instance.load_settings()
     assert settings == settings_data
@@ -123,11 +126,6 @@ Allen Rodger - Developer, Project Manager"""
 
     # Assert the captured output matches the expected credits text (multiline string)
     assert output.strip() == expected_credits
-
-
-def test_setting(arkyide_instance, monkeypatch):
-    """#TODO: Define what we expect from Settings on arkyide menu"""
-    pass
 
 def test_invalid_selection(capfd, arkyide_instance):
     """Tests if invalid_selection prints the expected message.
