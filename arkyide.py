@@ -11,7 +11,7 @@ class Arkyide:
         if os.path.exists(self.settings_file):
             with open(self.settings_file, 'r') as file:
                 return json.load(file)
-        return {"disclaimer": "enabled"}  # example w the disclamer -kyoma
+        return {"disclaimer": "enabled"}  # example w the disclaimer -kyoma
 
     def save_settings(self):
         with open(self.settings_file, 'w') as file:
@@ -140,8 +140,7 @@ class Arkyide:
                        "[5] ARP SPOOFER",
                        "[6] CHANGE MAC (run as root)",
                        "[7] ANON (anonymous surfing)",
-                       "[8] SETTINGS",
-                       "[9] CREDITS",
+                       "[8] CREDITS",
                        "[-] EXIT")
 
 
@@ -157,9 +156,8 @@ class Arkyide:
                 4: self.arp_spoofer,
                 5: self.change_mac,
                 6: self.anon_surfing,
-                7: self.setting,
-                8: self.credits,
-                9: self.exit_program
+                7: self.credits,
+                8: self.exit_program
             }
 
             selected_action = actions.get(menu_entry_index, self.invalid_selection)
@@ -229,13 +227,6 @@ class Arkyide:
         print("Credits selected")
         self.Credits()
         subprocess.call('python arkyide.py',shell=True)
-    
-    def setting(self):
-        print("SETTINGS MENU")
-        time.sleep(3) # 
-        exit()
-
-
 
     def exit_program(self):
         print("Exiting program")
