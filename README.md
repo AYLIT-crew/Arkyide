@@ -1,5 +1,7 @@
 # Project Arkyide
 
+![Arkyide Logo](assets/logo.jpg)
+
 **Project Arkyide** is a simple and complex suite of tools and an author tool installer developed in Python by AYLIT. The primary goal of Arkyide is to create a streamlined design for a suite of tools and other functionalities, with plans for a CLI (Command Line Interface) in the near future.
 
 ## Features
