@@ -1,17 +1,27 @@
 import hashlib
 import csv
+from concurrent.futures import ThreadPoolExecutor
+
+def hash_item(item):
+  """Calculates the SHA256 hash of an item."""
+  return hashlib.sha256(item.encode()).hexdigest()
+
+def multithreaded_hashing(input_list):
+  """Hashes items in the list using multiple threads."""
+  with ThreadPoolExecutor() as executor:
+    hashed_items = executor.map(hash_item, input_list)
+  return list(hashed_items)
+
 def brute_force_sha256(input_list, target_string):
-    for item in input_list:
-        # Compute SHA256 hash of the current item
-        hashed_item = hashlib.sha256(item.encode()).hexdigest()
-        
-        # Compare the hashed item with the target string
+    with ThreadPoolExecutor(max_workers=8) as executor:  # Define how many cores
+        hashed_items = executor.map(
+            lambda item: (item, hashlib.sha256(item.encode('utf-8')).hexdigest()),
+            input_list)
+    for item, hashed_item in hashed_items:
         if hashed_item == target_string:
-            return item  # Return the original item if the hash matches
-    
-    return None  # Return None if no match is found
+            return item
 
-
+    return None
 
 passwords = []
 with open('combo_list.csv', 'r') as file:
@@ -22,11 +32,7 @@ with open('combo_list.csv', 'r') as file:
         passwords.append(new_row)
 
 
-#Usage:
-input_list = passwords
-target_string = "0a34b9336e57472a87fd0fa911c9e6e75ac87249a7d6122f4ef5ecb3d88e04d" 
-
-result = brute_force_sha256(input_list, hashlib.sha256("Tschaly1998".encode()).hexdigest())
+result = brute_force_sha256(passwords, hashlib.sha256("Tschaly1998".encode()).hexdigest())
 
 if result:
     print(f"Match found: {result}")
