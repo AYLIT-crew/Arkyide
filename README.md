@@ -14,6 +14,22 @@
 Project Arkyide is currently in development. The estimated completion time is expected in winter 2024.
 
 ## Getting Started
+### Termux
+### 1. Install ncurses-utils
+1.1 `apt install ncurses -y`
+
+1.2 `apt install ncurses-utils -y`
+
+
+### 2. Clone the repo
+git clone "link"
+
+### 3. Enter the directory and install requirements
+3.1. `cd arkyide-repo`
+
+3.2. `pip install -r requirements.txt`
+
+### 4. Run
 ### Running on Linux 🐧
 
 1. Clone the Arkyide repository to your local machine using Git.
