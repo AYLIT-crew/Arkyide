@@ -24,7 +24,8 @@ ENV VIRTUAL_ENV=/app/.venv \
     PATH="/app/.venv/bin:$PATH"
 
 COPY --from=builder ${VIRTUAL_ENV} ${VIRTUAL_ENV}
+RUN apt-get update && apt-get install -y nmap
 
-COPY arkyide ./arkyide
+COPY arkyide.py ./arkyide.py
 
 ENTRYPOINT [ "python", "arkyide.py" ]
