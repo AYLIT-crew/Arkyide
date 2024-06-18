@@ -29,7 +29,7 @@ git clone "link"
 ### 3. Enter the directory and install requirements
 3.1. `cd arkyide-repo`
 
-3.2. `pip install -r requirements.txt`
+3.2. `poetry install`
 
 ### 4. Run
 ### Running on Linux 🐧
@@ -38,10 +38,14 @@ git clone "link"
 
 2. Open a terminal and navigate to the directory where you cloned the Arkyide repository.
 
-3. Run the following command in the terminal to install the required dependencies from the `requirements.txt` file:
-```pip install -r requirements.txt```
-4. After installing the dependencies, you can execute Arkyide by running the following command in the terminal:
-```python arkyide.py```
+3. Run the following command in the terminal to install the required dependencies: 
+```poetry install```
+
+4. Activate the python virtual enviornment by running:
+```poetry shell``
+
+6. Run arkyide win the virtual enviornment
+```python arkyide```
 ### Running on Docker 🐳
 #### Step 1: Install Docker
 
