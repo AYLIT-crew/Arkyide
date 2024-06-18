@@ -49,7 +49,7 @@ git clone "link"
 4. Activate the python virtual enviornment by running:
 ```poetry shell``
 
-6. Run arkyide win the virtual enviornment
+6. Run arkyide within the virtual enviornment
 ```python arkyide```
 ### Running on Docker 🐳
 #### Step 1: Install Docker
