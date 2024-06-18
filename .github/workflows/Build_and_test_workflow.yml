@@ -17,8 +17,8 @@ jobs:
       - name: Build application image
         id: build-app
         run: |
-          docker  build -t arkyide . --file dockerfile.build
+          docker  build -t arkyide --target test . 
           
       - name: Test application image
         run: |
-          docker run -t arkyide pytest
+          docker run -t arkyide

@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "arkyide"
+version = "0.1.0"
+description = "A simple and complex suite of tools"
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+simple-term-menu = "^1.6.4"
+termcolor = "^2.4.0"
+pyfiglet = "^1.0.2"
+scapy = "^2.5.0"
+mac-vendor-lookup = "^0.1.12"
+requests = "^2.32.3"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

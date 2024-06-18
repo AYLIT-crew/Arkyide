@@ -22,26 +22,35 @@ Project Arkyide is currently in development. The estimated completion time is ex
 
 1.2 `apt install ncurses-utils -y`
 
+### 3. Make sure to have poetry
+Look to https://python-poetry.org/docs/#installation for more info
 
-### 2. Clone the repo
+Manual way: 
+`curl -sSL https://install.python-poetry.org | python3 - `
+
+### 3. Clone the repo
 git clone "link"
 
-### 3. Enter the directory and install requirements
-3.1. `cd arkyide-repo`
+### 4. Enter the directory and install requirements
+4.1. `cd arkyide-repo`
 
-3.2. `pip install -r requirements.txt`
+4.2. `poetry install`
 
-### 4. Run
+### 5. Run
 ### Running on Linux 🐧
 
 1. Clone the Arkyide repository to your local machine using Git.
 
 2. Open a terminal and navigate to the directory where you cloned the Arkyide repository.
 
-3. Run the following command in the terminal to install the required dependencies from the `requirements.txt` file:
-```pip install -r requirements.txt```
-4. After installing the dependencies, you can execute Arkyide by running the following command in the terminal:
-```python arkyide.py```
+3. Run the following command in the terminal to install the required dependencies: 
+```poetry install```
+
+4. Activate the python virtual enviornment by running:
+```poetry shell``
+
+6. Run arkyide within the virtual enviornment
+```python arkyide```
 ### Running on Docker 🐳
 #### Step 1: Install Docker
 
