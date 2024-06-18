@@ -22,16 +22,21 @@ Project Arkyide is currently in development. The estimated completion time is ex
 
 1.2 `apt install ncurses-utils -y`
 
+### 3. Make sure to have poetry
+Look to https://python-poetry.org/docs/#installation for more info
 
-### 2. Clone the repo
+Manual way: 
+`curl -sSL https://install.python-poetry.org | python3 - `
+
+### 3. Clone the repo
 git clone "link"
 
-### 3. Enter the directory and install requirements
-3.1. `cd arkyide-repo`
+### 4. Enter the directory and install requirements
+4.1. `cd arkyide-repo`
 
-3.2. `poetry install`
+4.2. `poetry install`
 
-### 4. Run
+### 5. Run
 ### Running on Linux 🐧
 
 1. Clone the Arkyide repository to your local machine using Git.
