@@ -186,7 +186,7 @@ class Arkyide:
         time.sleep(1)
         subprocess.call('clear',shell=True)
         subprocess.call('python lib/artl/artl.py',shell=True)
-        subpocess.call('python arkyide.py',shell=True)
+        subprocess.call('python arkyide.py',shell=True)
    
         
     def the_eye(self):
