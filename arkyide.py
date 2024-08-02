@@ -183,12 +183,11 @@ class Arkyide:
 
     def tools_installer(self):
         print("Tools Installer selected")
-        #time.sleep(3)
+        time.sleep(1)
         exit()
-        #subprocess.call('clear',shell=True)
-        
-        #subprocess.call('python lib/ARKTLinstaller.py',shell=True)
-        #subprocess.call('python arkyide.py',shell=True)
+        subprocess.call('clear',shell=True)
+        subprocess.call('python lib/artl/artl.py',shell=True)
+        sbprocess.call('python arkyide.py',shell=True)
    
         
     def the_eye(self):
