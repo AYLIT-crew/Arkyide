@@ -30,25 +30,25 @@ class Installer:
         self.menu()
 
     # Handle user choice for tool installation
-    def handle_tool_choice(self, choice):
-        tool_repos = {
-            '1': 'https://github.com/aircrack-ng/aircrack-ng',
-            '2': 'https://github.com/beefproject/beef',
-            # Add more tools here as needed
-        }
-        repo_url = tool_repos.get(choice)
-        if repo_url:
-            self.install_tool(repo_url)
-        else:
-            print(colored('Invalid choice or not implemented yet.', 'red'))
-            sleep(1)
-            self.menu()
+    #def handle_tool_choice(self, choice):
+#        tool_repos = {
+#            '1': 'https://github.com/aircrack-ng/aircrack-ng',
+#            '2': 'https://github.com/beefproject/beef',
+#            # Add more tools here as needed
+#        }
+#        repo_url = tool_repos.get(choice)
+#        if repo_url:
+#            self.install_tool(repo_url)
+#        else:
+#            print(colored('Invalid choice or not implemented yet.', 'red'))
+#            sleep(1)
+#            self.menu()
 
     # Display the main menu and handle user input
-    def main_menu(self):
-            self.print_tool_list()
-            usrchoice2 = input(colored('\nEnter the number of tool you want to install:\n', 'cyan'))
-            self.handle_tool_choice(usrchoice2)
+#    def main_menu(self):
+#            self.print_tool_list()
+#            usrchoice2 = input(colored('\nEnter the number of tool you want to install:\n', 'cyan'))
+#            self.handle_tool_choice(usrchoice2)
     
 
     # Display the welcome screen
@@ -58,7 +58,7 @@ class Installer:
 #        print(colored(figlet_format('G U A R D I A') + '\n\t-An AYLIT Production\n\t-v1.0 beta', 'cyan'))
 #        print(colored('-'*58, 'red'))
 #        self.main_menu()
-
+# --- decided it won't be useful since I'll rewrite it a bit but I'll still keep it for future needs if something is needed ---
 
     def exit_program(self):
         print(colored('Exiting program', 'red'))
@@ -81,17 +81,37 @@ class Installer:
 /_/   \_\_| \_\_|\_\___|_| \_|____/ |_/_/   \_\_____|_____|_____|_| \_\
 
 """)
-            options = ["LIST OF TOOLS", "EXIT"]
+            options = ( 
+                          "[1] CATEGORIES",
+                          "[2] EXIT")
             menu_highlight_style = ("standout", "fg_gray", "bold")
             terminal_menu = TerminalMenu(options, menu_highlight_style=menu_highlight_style)
             menu_entry_index = terminal_menu.show()
             actions = {
                 0: self.main_menu,
-                1: self.exit_program,
+                1: self.exit_program
             }
             selected_action = actions.get(menu_entry_index, self.invalid_selection)
             selected_action()
+            
+    def main_menu(self):
+        print('not done yet')
+        sleep(2)
+            
+    def exit_program(self):
+        print("EXITING")
+        sleep(1)
+        exit()
+        os.system('clear')
+        exit()
+        
+    
+  
+            
+            
+       
 
 if __name__ == "__main__":
     installer = Installer()
     installer.menu()
+    
