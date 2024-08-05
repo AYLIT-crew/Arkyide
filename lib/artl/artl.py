@@ -13,7 +13,10 @@ class Installer:
     def instalando(self):
         while True:
             os.system('clear')
-            with open()
+            with open(tl.txt, 'r') as file:
+                content = file.read()
+                print(content
+              )
     
     
     def menu(self):
