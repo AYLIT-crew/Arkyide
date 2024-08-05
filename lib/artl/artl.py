@@ -13,7 +13,7 @@ class Installer:
     def instalando(self):
         while True:
             os.system('clear')
-           
+            with open()
     
     
     def menu(self):
