@@ -15,8 +15,8 @@ class Installer:
             os.system('clear')
             with open(tl.txt, 'r') as file:
                 content = file.read()
-                print(content
-              )
+                print(content)
+            
     
     
     def menu(self):
