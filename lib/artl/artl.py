@@ -5,21 +5,8 @@ from pyfiglet import figlet_format
 from termcolor import colored
 from simple_term_menu import TerminalMenu
 
-class Installer:
-
-    def __init__(self):
-        pass
-    
-    def instalando(self):
-        while True:
-            os.system('clear')
-            with open(tl.txt, 'r') as file:
-                content = file.read()
-                print(content)
-            
-    
-    
-    def menu(self):
+    def wmenu():
+        def menu():
         while True:
             os.system('clear')
             print("""
@@ -55,13 +42,3 @@ class Installer:
         os.system('clear')
         exit()
         
-    
-  
-            
-            
-       
-
-if __name__ == "__main__":
-    installer = Installer()
-    installer.menu()
-    
