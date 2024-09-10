@@ -29,7 +29,7 @@ Manual installation method
 `curl -sSL https://install.python-poetry.org | python3 - `
 
 ### 3. Clone the repository
-git clone "[https://github.com/AYLIT-crew/Arkyide.git](https://github.com/AYLIT-crew/Arkyide.git)"
+git clone ``"[https://github.com/AYLIT-crew/Arkyide.git](https://github.com/AYLIT-crew/Arkyide.git)"``
 
 ### 4. Enter the directory and install requirements
 4.1. `cd arkyide-repo`
