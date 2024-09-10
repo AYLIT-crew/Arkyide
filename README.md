@@ -2,7 +2,7 @@
 
 ![Arkyide Logo](assets/logo.jpg)
 
-**Project Arkyide** is a simple and complex suite of tools and an author tool installer developed in Python by AYLIT. The primary goal of Arkyide is to create a streamlined design for a suite of tools and other functionalities, with plans for a CLI (Command Line Interface) in the near future.
+**Project Arkyide** is a simple and complex suite of tools and an author tool installer developed in Python by AYLIT. The primary goal of Arkyide is to create a streamlined design for a suite of tools and additional features, with plans for a CLI (Command Line Interface) in the near future.
 
 ## Features
 
@@ -22,14 +22,14 @@ Project Arkyide is currently in development. The estimated completion time is ex
 
 1.2 `apt install ncurses-utils -y`
 
-### 3. Make sure to have poetry
+### 3. "Make sure to have Poetry installed.
 Look to https://python-poetry.org/docs/#installation for more info
 
-Manual way: 
+Manual installation method
 `curl -sSL https://install.python-poetry.org | python3 - `
 
-### 3. Clone the repo
-git clone "link"
+### 3. Clone the repository
+``git clone "https://github.com/AYLIT-crew/Arkyide.git"``
 
 ### 4. Enter the directory and install requirements
 4.1. `cd arkyide-repo`
@@ -46,15 +46,15 @@ git clone "link"
 3. Run the following command in the terminal to install the required dependencies: 
 ```poetry install```
 
-4. Activate the python virtual enviornment by running:
+4. Activate the python virtual environment by running:
 ```poetry shell``
 
-6. Run arkyide within the virtual enviornment
-```python arkyide```
+6. Run Arkyide within the virtual environment:
+```python arkyide.py```
 ### Running on Docker 🐳
 #### Step 1: Install Docker
 
-1. Visit the official Docker website: https://www.docker.com/get-started
+1. Visit the [official Docker website](https://www.docker.com/get-started):
 2. Download Docker for your operating system (Windows, macOS, or Linux).
 3. Follow the installation instructions provided on the website.
 4. Once the installation is complete, verify Docker installation by opening a terminal/command prompt and typing `docker --version.` You should see the installed Docker version.
@@ -62,7 +62,7 @@ git clone "link"
 #### Step 2: Navigate to Arkyide Root Folder
 
 1. Open a terminal/command prompt/shell.
-2. Use the cd command to navigate to the root folder of your Arkyide project.
+2. Use the `cd` command to navigate to the root folder of your Arkyide project.
 
 #### Step 3: Build the Docker Image
 
@@ -72,20 +72,20 @@ git clone "link"
 #### Step 4: Run the Docker Container
 
 After building the image, run the Docker container using the following commands:
-try first this one:
+Try running this command first:
 `docker run -it arkyide`
-if it doesn't work, you can use this one:
+If the above command fails, try this alternative:
 `docker run -it --env TERM=xterm-256color arkyide`
 
 - Now you should access the Menu on terminal.
 
-## Contribution
+## Contributing
 
 Check `CONTRIBUTING.md` for more info.
 
 ## License
 
-This project is licensed under the GNU 3.0 License.
+This project is licensed under the GNU General Public License v3.0.
 
 ## Contact
 
@@ -93,5 +93,4 @@ For more information, please contact AYLIT.
 
 ---
 
-Stay tuned for updates and new features as Project Arkyide evolves!
-
+Follow the project for updates and new features!
