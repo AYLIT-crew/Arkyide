@@ -13,7 +13,7 @@
 
 ## Development Status
 
-Project Arkyide is currently in development. The estimated completion time is expected in winter 2024.
+Project Arkyide is currently in development. The estimated completion time is expected in mid-late 2026.
 
 ## Getting Started
 ### Termux
