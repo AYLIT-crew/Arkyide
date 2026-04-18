@@ -13,7 +13,8 @@
 
 ## Development Status
 
-Project Arkyide is currently in development. The estimated completion time is expected in mid-late 2026.
+P̶r̶o̶j̶e̶c̶t̶ ̶A̶r̶k̶y̶i̶d̶e̶ ̶i̶s̶ ̶c̶u̶r̶r̶e̶n̶t̶l̶y̶ ̶i̶n̶ ̶d̶e̶v̶e̶l̶o̶p̶m̶e̶n̶t̶.̶ ̶T̶h̶e̶ ̶e̶s̶t̶i̶m̶a̶t̶e̶d̶ ̶c̶o̶m̶p̶l̶e̶t̶i̶o̶n̶ ̶t̶i̶m̶e̶ ̶i̶s̶ ̶e̶x̶p̶e̶c̶t̶e̶d̶ ̶i̶n̶ ̶m̶i̶d̶-̶l̶a̶t̶e̶ ̶2̶0̶2̶6̶.̶
+Idk when I and vendi get on this its still highly unfinished and needs some love. Most likely to be archived and new repository under same name made or similar action to be taken. - Owner Komrade.
 
 ## Getting Started
 ### Termux
